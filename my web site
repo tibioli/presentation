@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - VAIRON Cybert</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">VAIRON Cybert</h1>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== ACCUEIL ===== -->
+  <section id="accueil" class="hero">
+    <div class="hero-content">
+      <h2>Bienvenue sur mon Portfolio</h2>
+      <p>Mon objectif est de pouvoir intégrer une école d'informatique de qualité.</p>
+      <a href="#projets" class="btn">Voir mes projets</a>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS ===== -->
+  <section id="apropos" class="section">
+    <h2>À propos de moi</h2>
+    <p>
+      J’ai choisi l’informatique parce que c’est un domaine qui me passionne depuis un moment. 
+      J’aime comprendre comment les technologies fonctionnent et créer des choses concrètes, 
+      comme des sites ou des applications. Ce qui m’attire aussi, c’est que c’est un secteur en évolution constante : on apprend sans arrêt.
+      À terme, j’aimerais travailler comme développeur ou dans la cybersécurité, pour contribuer à des projets utiles et innovants.
+    </p>
+  </section>
+
+  <!-- ===== PROJETS ===== -->
+  <section id="projets" class="section">
+    <h2>Mes projets</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🎮 Mini-jeu Scratch</h3>
+        <p>Création d’un petit jeu interactif sur Scratch, mettant en avant la logique et la créativité.</p>
+      </div>
+      <div class="project-card">
+        <h3>🐍 Application Python</h3>
+        <p>Développement d’une application simple en Python, pour apprendre les bases de la programmation.</p>
+      </div>
+      <div class="project-card">
+        <h3>🔧 Projet électronique</h3>
+        <p>Conception d’un montage électronique avec microcontrôleur et composants de base.</p>
+      </div>
+      <div class="project-card">
+        <h3>🧱 Modélisation 3D</h3>
+        <p>Réalisation de modèles 3D simples pour expérimenter la conception numérique.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>Tu peux me contacter via :</p>
+    <ul>
+      <li>Email : <a href="mailto:vairon.cybert@example.com">vairon.cybert@example.com</a></li>
+      <li>GitHub : <a href="#">github.com/vairon-cybert</a></li>
+      <li>LinkedIn : <a href="#">linkedin.com/in/vairon-cybert</a></li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 VAIRON Cybert — Portfolio personnel</p>
+  </footer>
+</body>
+</html>
