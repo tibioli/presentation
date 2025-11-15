@@ -56,12 +56,39 @@ header {
 
 /* ---- HERO ---- */
 .hero {
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: heroSlideshow 18s infinite;
+  filter: brightness(40%); /* assombrit pour rendre le texte lisible */
+}
+
+@keyframes heroSlideshow {
+  0%   { background-image: url("images/hero1.jpg"); }
+  33%  { background-image: url("images/hero2.jpg"); }
+  66%  { background-image: url("images/hero3.jpg"); }
+  100% { background-image: url("images/hero1.jpg"); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h2 {
