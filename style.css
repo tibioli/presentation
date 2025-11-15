@@ -83,7 +83,7 @@ header {
   0%   { background-image: url("imag/hero1.jpeg"); }
   33%  { background-image: url("imag/hero2.jpeg"); }
   66%  { background-image: url("imag/hero3.jpeg"); }
-  77%  { background-image: url("imag/hero4.jpeg"); }
+  77%  { background-image: url("imag/hero4.jpg"); }
   100% { background-image: url("imag/hero1.jpeg"); }
 }
 
