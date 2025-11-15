@@ -73,7 +73,7 @@ header {
   width: 200%; /* 4 images = 400% */
   height: 100%;
   display: flex;
-   animation: slideInfinite 25s linear infinite;
+   animation: slideInfinite 30s linear infinite;
 }
 
 .slider-bg img {
