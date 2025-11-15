@@ -70,23 +70,47 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 400%; /* 4 images = 400% */
+  width: 200%; /* 4 images = 400% */
   height: 100%;
   display: flex;
-  animation: slideLeft 20s linear infinite;
+   animation: slideInfinite 25s linear infinite;
 }
 
 .slider-bg img {
-  width: 100%;
+  width: 25%; /* 4 images → 25% chacune */
   height: 100%;
   object-fit: cover;
 }
 
-/* Animation du slide */
-@keyframes slideLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-75%); } 
-  /* 4 images → on décale de 3 images = -75% */
+@keyframes slideInfinite {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Effet de fondu sur les côtés */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.6), 
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.6)
+  );
+  z-index: 2;
+}
+
+/* Texte */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
 }
 
 .hero-content {
