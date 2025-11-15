@@ -114,7 +114,7 @@ header {
 
 /* Animation du slideshow */
 @keyframes heroSlideshow {
-  0% { background-image: url("images/hero1.jpg"); }
+  0% { background-image: url("imag/game.png"); }
   33% { background-image: url("images/hero2.jpg"); }
   66% { background-image: url("images/hero3.jpg"); }
   100% { background-image: url("images/hero1.jpg"); }
