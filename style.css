@@ -1,127 +1,227 @@
-:root {
-    --primary: #38bdf8;
-    --bg-dark: #0f172a;
-    --card-bg: #1e293b;
-    --text-light: #f8fafc;
+/* ---- GLOBAL ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    line-height: 1.6;
+  background-color: #06447d;
+  color: #eaeaea;
+  line-height: 1.6;
 }
 
-/* --- Navigation --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: rgba(15, 23, 42, 0.9);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* ---- NAVBAR ---- */
+header {
+  background: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo { font-size: 1.5rem; font-weight: bold; }
-.logo span { color: var(--primary); }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+}
 
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
-nav a:hover { color: var(--primary); }
+.logo {
+  font-size: 1.4rem;
+  color: #00bcd4;
+}
 
-/* --- Hero Section --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #eaeaea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+/* ---- HERO ---- */
+/* ---- HERO SLIDER (défilement horizontal) ---- */
 .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid var(--primary);
-    object-fit: cover;
-    transition: transform 0.5s ease;
+.slider-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%; /* 4 images = 400% */
+  height: 100%;
+  display: flex;
+   animation: slideInfinite 30s linear infinite;
 }
 
-.profile-pic:hover {
-    transform: rotate(5deg) scale(1.1);
+.slider-bg img {
+  width: 25%; /* 4 images → 25% chacune */
+  height: 100%;
+  object-fit: cover;
 }
 
-/* --- Cartes Projets --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 50px 10%;
+@keyframes slideInfinite {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Effet de fondu sur les côtés */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.6), 
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.6)
+  );
+  z-index: 2;
+}
+
+/* Texte */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00bcd4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0097a7;
+}
+
+/* ---- SECTIONS ---- */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  color: #00bcd4;
+  margin-bottom: 25px;
+}
+
+/* ---- PROJECTS ---- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .project-card {
-    background: var(--card-bg);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.img-container {
-    overflow: hidden;
-    height: 200px;
-}
-
-.project-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border-color: var(--primary);
+  transform: translateY(-5px);
+  background: #242424;
 }
 
-.project-card:hover img {
-    transform: scale(1.1);
+/* ---- CONTACT ---- */
+.contact ul {
+  list-style: none;
+  margin-top: 15px;
 }
 
-.card-content { padding: 20px; }
-
-/* --- Galerie Atelier --- */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 20px 10%;
+.contact a {
+  color: #00bcd4;
+  text-decoration: none;
 }
 
-.gallery-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    filter: grayscale(40%);
-    transition: 0.4s;
+.contact a:hover {
+  text-decoration: underline;
 }
 
-.gallery-img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
-}
-
+/* ---- FOOTER ---- */
 footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 0.9rem;
-    opacity: 0.7;
+  text-align: center;
+  padding: 20px;
+  background: #1f1f1f;
+  font-size: 0.9rem;
+  color: #999;
+}
+.project-details {
+  display: none; /* caché par défaut */
+  margin-top: 10px;
+  background-color: #242424;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-/* Responsive pour téléphone */
-@media (max-width: 768px) {
-    .gallery { grid-template-columns: 1fr; }
+.project-details img {
+  max-width: 100%;
+     border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-show {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-show:hover {
+  background: #0097a7;
 }
