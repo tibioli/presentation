@@ -1,80 +1,126 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Béni ESSODINA | Portfolio Tech</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - VAIRON Cybert</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">VAIRON Cybert</h1>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <nav>
-            <div class="logo">Béni<span>.Dev</span></div>
-            <ul>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#labo">Atelier</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <div class="profile-container">
-                <img src="img/hero2.jpeg" alt="Béni ESSODINA" class="profile-pic">
-            </div>
-            <h1>Béni ESSODINA</h1>
-            <p class="subtitle">Futur Ingénieur en Informatique | Passionné d'Électronique</p>
-        </div>
-    </header>
+  <!-- ===== ACCUEIL ===== -->
+  <section id="accueil" class="hero">
+     <div class="slider-bg">
+    <img src="img/hero1.jpeg" alt="">
+    <img src="img/hero3.jpeg" alt="">
+    <img src="img/hero2.jpeg" alt="">
+    <img src="img/hero4.jpg" alt=""> 
+    <img src="img/hero1.jpeg" alt="">
+    <img src="img/hero3.jpeg" alt="">
+    <img src="img/hero2.jpeg" alt="">
+    <img src="img/hero4.jpg" alt="">
+  </div>
+    <div class="hero-content">
+      <h2>WELCOME</h2>
+      <p>My goal: SUCCED.</p>
+      <a href="#projets" class="btn">Voir mes projets</a>
+    </div>
+  </section>
+  <!-- ===== À PROPOS ===== -->
+  <section id="apropos" class="section">
+    <h2>À propos de moi</h2>
+    <p>
+      J’ai choisi l’informatique parce que c’est un domaine qui me passionne depuis un moment. 
+      J’aime comprendre comment les technologies fonctionnent et créer des choses concrètes, 
+      comme des sites ou des applications. Ce qui m’attire aussi, c’est que c’est un secteur en évolution constante : on apprend sans arrêt.
+      À terme, j’aimerais travailler comme développeur ou dans la cybersécurité, pour contribuer à des projets utiles et innovants.
+    </p>
+  </section>
 
-    <section id="projets">
-        <h2>Mes Projets Phares</h2>
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <div class="img-container">
-                    <img src="img/rob1.jpg" alt="Robot Mobile">
-                </div>
-                <div class="card-content">
-                    <h3>Robotique Mobile</h3>
-                    <p>Système autonome sur châssis bois piloté par microcontrôleur.</p>
-                </div>
-            </div>
+  <!-- ===== PROJETS ===== -->
+  <section id="projets" class="section">
+    <h2>Mes projets</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🐍 Application Python</h3>
+        <p>Développement d’une application simple en Python, pour apprendre les bases de la programmation.</p>
+      </div>
+      <div class="project-card">
+        <h3>🔧 Projet électronique</h3>
+        <p>Conception d’un montage électronique avec microcontrôleur et composants de base.</p>
+         <button class="btn-show" onclick="toggleProject(this)">Voir plus</button>
 
-            <div class="project-card">
-                <div class="img-container">
-                    <img src="img/p3.jpg" alt="Arduino Bluetooth">
-                </div>
-                <div class="card-content">
-                    <h3>IoT & Bluetooth</h3>
-                    <p>Contrôle à distance de composants via module Bluetooth HC-05.</p>
-                </div>
-            </div>
+  <div class="project-details">
+    <img src="img/p1.jpg" alt="">
+    <img src="img/p2.jpg" alt="">
+    <img src="img/p3.jpg" alt=""> <!-- tu peux en mettre 2 seulement -->
+  </div>
+      </div>
+      <div class="project-card">
+        <h3>🧱 Modélisation 3D</h3>
+        <p>Réalisation de modèles 3D simples pour expérimenter la conception numérique.</p>
+      </div>
+        <div class="project-card">
+        <h3>🎮 Mini-jeu Scratch</h3>
+  <p>Création d’un petit jeu interactif sur Scratch.</p>
+  <button class="btn-show" onclick="toggleDetails('project1')">Voir plus</button>
+  <div id="project1" class="project-details">
+    <img src="img/game.png" alt="Mini-jeu Scratch" />
+    <p>voici ma toute premiere création, malheuresement inachever et mal optimiser(date de création: aout 2023 .</p>
+     <li>Game : <a  href="https://scratch.mit.edu/projects/1188302129">scratch</a></li>
+  </div>
+    </div>
+  </section>
 
-            <div class="project-card">
-                <div class="img-container">
-                    <img src="img/game.jpg" alt="Illustration Game">
-                </div>
-                <div class="card-content">
-                    <h3>Design & Création</h3>
-                    <p>Modélisation et univers visuel pour projets numériques.</p>
-                </div>
-            </div>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>Tu peux me contacter via :</p>
+    <ul>
+      <li>Email : <a href="mailto:tibiolidragon8@gmail.com">tibiolidragon8@gmail.com</a></li>
+      <li>GitHub : <a href="https://github.com/tibioli">github.com</a></li>
+    </ul>
+  </section>
 
-        </div>
-    </section>
-
-    <section id="labo">
-        <h2>L'Atelier en Action</h2>
-        <div class="gallery">
-            <img src="img/hero4.jpg" alt="Travail d'équipe" class="gallery-img">
-            <img src="img/hero3.jpeg" alt="Électronique" class="gallery-img">
-            <img src="img/p1.jpg" alt="Montage" class="gallery-img">
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Béni ESSODINA — Lomé, Togo</p>
-    </footer>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 VAIRON Cybert — Portfolio personnel</p>
+  </footer>
+  <script>
+function toggleDetails(id) {
+  const details = document.getElementById(id);
+  if (details.style.display === "none" || details.style.display === "") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>
+<script>
+function toggleProject(button) {
+  const details = button.nextElementSibling;
+
+  if (details.style.display === "block") {
+    details.style.display = "none";
+    button.textContent = "Voir plus";
+  } else {
+    details.style.display = "block";
+    button.textContent = "Voir moins";
+  }
+}
+</script>
