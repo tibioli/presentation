@@ -227,5 +227,30 @@
     }();
 </script>
     
+    <script>
+    const cleanWatermark = () => {
+        // Liste des sélecteurs potentiels utilisés par Unicorn Studio
+        const selectors = [
+            '[class*="unicorn-studio-watermark"]',
+            '[id*="unicorn-studio-watermark"]',
+            'a[href*="unicornstudio.io"]'
+        ];
+        
+        selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(el => el.remove());
+        });
+    };
+
+    // Exécute le nettoyage au chargement et en boucle pendant les 5 premières secondes
+    window.addEventListener('load', cleanWatermark);
+    
+    // Intervalle de sécurité car le script peut injecter le logo tardivement
+    const interval = setInterval(cleanWatermark, 500);
+    
+    // Arrête de chercher après 10 secondes pour économiser les ressources
+    setTimeout(() => clearInterval(interval), 10000);
+</script>
+    
 </body>
 </html>
