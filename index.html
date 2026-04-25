@@ -1,348 +1,359 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | VAIRON Cybert</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Cyber Premium V2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-    body {
-      background: #0b1120;
-      color: white;
-      overflow-x: hidden;
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at top left, rgba(0,255,170,0.08), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(0,140,255,0.08), transparent 30%);
-      z-index: -1;
-    }
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
 
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(15px);
-      background: rgba(10, 15, 30, 0.75);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+header{
+position:fixed;
+top:0;
+width:100%;
+backdrop-filter:blur(15px);
+background:rgba(0,0,0,.4);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
 
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-    }
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: #00f5c4;
-    }
+.logo{
+font-family:'JetBrains Mono', monospace;
+font-weight:700;
+color:#00ff88;
+}
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
+}
 
-    .nav-links a {
-      text-decoration: none;
-      color: white;
-      transition: .3s;
-    }
+.nav-links a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
 
-    .nav-links a:hover {
-      color: #00f5c4;
-    }
+.nav-links a:hover{
+color:#00ff88;
+}
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 100px 20px;
-      position: relative;
-    }
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
+}
 
-    .hero-content {
-      max-width: 800px;
-      animation: fadeUp 1s ease;
-    }
+.hero-content h1{
+font-size:clamp(2rem,7vw,5rem);
+margin-bottom:20px;
+}
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      margin-bottom: 20px;
-    }
+.typing{
+font-family:'JetBrains Mono', monospace;
+color:#00ff88;
+font-size:1.3rem;
+margin-bottom:25px;
+}
 
-    .hero span {
-      color: #00f5c4;
-    }
+.btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:999px;
+background:linear-gradient(135deg,#00ff88,#00bfff);
+text-decoration:none;
+color:white;
+font-weight:700;
+transition:.3s;
+}
 
-    .hero p {
-      color: #94a3b8;
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
+.btn:hover{
+transform:translateY(-4px);
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      background: linear-gradient(135deg, #00f5c4, #008cff);
-      color: white;
-      font-weight: bold;
-      transition: .3s;
-    }
+section{
+max-width:1200px;
+margin:auto;
+padding:100px 20px;
+}
 
-    .btn:hover {
-      transform: translateY(-3px);
-    }
+h2{
+font-size:2rem;
+margin-bottom:30px;
+color:#00ff88;
+}
 
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 100px 20px;
-    }
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
 
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #00f5c4;
-    }
+.card{
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.06);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
 
-    .about p {
-      color: #cbd5e1;
-      line-height: 1.8;
-      max-width: 800px;
-    }
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,255,136,.15);
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
 
-    .project-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(12px);
-      padding: 25px;
-      border-radius: 20px;
-      transition: .4s;
-    }
+.skill{
+padding:20px;
+background:rgba(255,255,255,.04);
+border-radius:15px;
+}
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      border-color: #00f5c4;
-    }
+.progress{
+height:8px;
+background:#111827;
+border-radius:999px;
+margin-top:10px;
+overflow:hidden;
+}
 
-    .project-card h3 {
-      margin-bottom: 15px;
-    }
+.progress span{
+display:block;
+height:100%;
+background:linear-gradient(90deg,#00ff88,#00bfff);
+}
 
-    .project-card p {
-      color: #94a3b8;
-      margin-bottom: 15px;
-    }
+.timeline{
+border-left:2px solid #00ff88;
+padding-left:20px;
+}
 
-    .btn-show {
-      padding: 10px 16px;
-      border: none;
-      border-radius: 999px;
-      background: #00f5c4;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.timeline-item{
+margin-bottom:30px;
+}
 
-    .project-details {
-      max-height: 0;
-      overflow: hidden;
-      transition: .4s ease;
-    }
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
 
-    .project-details.active {
-      max-height: 500px;
-      margin-top: 15px;
-    }
+input,textarea{
+padding:15px;
+border:none;
+border-radius:10px;
+background:#111827;
+color:white;
+}
 
-    .project-details img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 10px;
-    }
+footer{
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-box {
-      background: rgba(255,255,255,0.04);
-      padding: 20px;
-      border-radius: 15px;
-    }
-
-    .contact-box {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-box a {
-      color: #00f5c4;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-  </style>
+@media(max-width:768px){
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+}
+</style>
 </head>
 <body>
 
+<canvas id="bg"></canvas>
+
 <header>
-  <nav class="navbar">
-    <div class="logo">VAIRON Cybert</div>
-    <ul class="nav-links">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#skills">Compétences</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+<div class="logo">VAIRON_CYBERT</div>
+<ul class="nav-links">
+<li><a href="#home">Accueil</a></li>
+<li><a href="#about">À propos</a></li>
+<li><a href="#projects">Projets</a></li>
+<li><a href="#skills">Compétences</a></li>
+<li><a href="#timeline">Parcours</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 </header>
 
-<section id="accueil" class="hero">
-  <div class="hero-content">
-    <h1>Développeur & <span>Cybersécurité</span></h1>
-    <p>
-      Passionné par le développement web, Python et la cybersécurité.
-      Je construis des projets modernes, utiles et sécurisés.
-    </p>
-    <a href="#projets" class="btn">Voir mes projets</a>
-  </div>
+<section id="home" class="hero">
+<div class="hero-content">
+<h1>Développeur Web & Cybersécurité</h1>
+<div class="typing" id="typing"></div>
+<a href="#projects" class="btn">Explorer mes projets</a>
+</div>
 </section>
 
-<section id="apropos" class="about">
-  <h2>À propos</h2>
-  <p>
-    Passionné par l'informatique, je développe mes compétences en programmation,
-    cybersécurité et conception d'applications. Mon objectif est de créer des solutions
-    performantes, modernes et sécurisées.
-  </p>
+<section id="about">
+<h2>À propos</h2>
+<div class="card">
+<p>
+Passionné par le développement, la cybersécurité et les systèmes.
+J’aime concevoir des solutions modernes, sécurisées et performantes.
+</p>
+</div>
 </section>
 
-<section id="projets">
-  <h2>Mes projets</h2>
-  <div class="projects">
-
-    <div class="project-card">
-      <h3>🐍 Application Python</h3>
-      <p>Application simple pour automatiser certaines tâches.</p>
-    </div>
-
-    <div class="project-card">
-      <h3>🔧 Projet électronique</h3>
-      <p>Montage avec microcontrôleur et capteurs.</p>
-      <button class="btn-show" onclick="toggleDetails('project1')">Voir plus</button>
-      <div id="project1" class="project-details">
-        <img src="img/p1.jpg" alt="Projet 1">
-        <img src="img/p2.jpg" alt="Projet 2">
-        <img src="img/p3.jpg" alt="Projet 3">
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>🧱 Modélisation 3D</h3>
-      <p>Création de modèles et prototypes 3D.</p>
-    </div>
-
-    <div class="project-card">
-      <h3>🎮 Mini-jeu Scratch</h3>
-      <p>Développement d’un jeu interactif éducatif.</p>
-    </div>
-
-  </div>
+<section id="projects">
+<h2>Projets</h2>
+<div class="card-grid">
+<div class="card">
+<h3>🐍 Python Automation</h3>
+<p>Scripts d’automatisation et outils utiles.</p>
+</div>
+<div class="card">
+<h3>🔐 Cyber Lab</h3>
+<p>Tests sécurité, analyse réseau et pentesting.</p>
+</div>
+<div class="card">
+<h3>🌐 Web Projects</h3>
+<p>Sites modernes et interfaces dynamiques.</p>
+</div>
+<div class="card">
+<h3>🎮 Mini Games</h3>
+<p>Expérimentations interactives.</p>
+</div>
+</div>
 </section>
 
 <section id="skills">
-  <h2>Compétences</h2>
-  <div class="skills-grid">
-    <div class="skill-box">HTML / CSS</div>
-    <div class="skill-box">JavaScript</div>
-    <div class="skill-box">Python</div>
-    <div class="skill-box">Cybersécurité</div>
-    <div class="skill-box">Linux</div>
-    <div class="skill-box">Réseaux</div>
-  </div>
+<h2>Compétences</h2>
+<div class="skills">
+<div class="skill">HTML/CSS<div class="progress"><span style="width:90%"></span></div></div>
+<div class="skill">JavaScript<div class="progress"><span style="width:75%"></span></div></div>
+<div class="skill">Python<div class="progress"><span style="width:85%"></span></div></div>
+<div class="skill">Cybersécurité<div class="progress"><span style="width:70%"></span></div></div>
+</div>
+</section>
+
+<section id="timeline">
+<h2>Parcours</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h3>2024</h3>
+<p>Début du développement web</p>
+</div>
+<div class="timeline-item">
+<h3>2025</h3>
+<p>Projets Python & électronique</p>
+</div>
+<div class="timeline-item">
+<h3>2026</h3>
+<p>Spécialisation cybersécurité</p>
+</div>
+</div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-box">
-    <a href="mailto:tibiolidragon8@gmail.com">tibiolidragon8@gmail.com</a>
-    <a href="https://github.com/tibioli" target="_blank">GitHub</a>
-  </div>
+<h2>Contact</h2>
+<form class="contact-form">
+<input type="text" placeholder="Nom">
+<input type="email" placeholder="Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<button class="btn">Envoyer</button>
+</form>
 </section>
 
 <footer>
-  <p>© 2026 VAIRON Cybert — Portfolio personnel</p>
+© 2026 VAIRON Cybert
 </footer>
 
 <script>
-function toggleDetails(id) {
-  const details = document.getElementById(id);
-  details.classList.toggle('active');
+const text = [
+"Développeur Front-End",
+"Passionné Cybersecurity",
+"Python Developer"
+];
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+
+(function type(){
+if(count === text.length){count = 0;}
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+document.getElementById('typing').textContent = letter;
+if(letter.length === currentText.length){
+count++;
+index = 0;
+setTimeout(type, 1000);
+}else{
+setTimeout(type, 100);
 }
+})();
+
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2
+});
+}
+
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle='rgba(0,255,136,.6)';
+ctx.fill();
+p.y += 0.3;
+if(p.y > canvas.height) p.y = 0;
+});
+requestAnimationFrame(animate);
+}
+animate();
 </script>
 
 </body>
