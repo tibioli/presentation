@@ -1,356 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Cyber Premium V2</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAIRON Cybert | Développeur Concepteur</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+  <link rel="stylesheet" href="style.css">
 
-body{
-font-family:'Inter',sans-serif;
-background:#050816;
-color:white;
-overflow-x:hidden;
-}
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-backdrop-filter:blur(15px);
-background:rgba(0,0,0,.4);
-z-index:999;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.navbar{
-max-width:1200px;
-margin:auto;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-family:'JetBrains Mono', monospace;
-font-weight:700;
-color:#00ff88;
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-color:white;
-transition:.3s;
-}
-
-.nav-links a:hover{
-color:#00ff88;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:100px 20px;
-}
-
-.hero-content h1{
-font-size:clamp(2rem,7vw,5rem);
-margin-bottom:20px;
-}
-
-.typing{
-font-family:'JetBrains Mono', monospace;
-color:#00ff88;
-font-size:1.3rem;
-margin-bottom:25px;
-}
-
-.btn{
-display:inline-block;
-padding:14px 28px;
-border-radius:999px;
-background:linear-gradient(135deg,#00ff88,#00bfff);
-text-decoration:none;
-color:white;
-font-weight:700;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-section{
-max-width:1200px;
-margin:auto;
-padding:100px 20px;
-}
-
-h2{
-font-size:2rem;
-margin-bottom:30px;
-color:#00ff88;
-}
-
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-
-.card{
-background:rgba(255,255,255,.04);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,.06);
-padding:25px;
-border-radius:20px;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,255,136,.15);
-}
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.skill{
-padding:20px;
-background:rgba(255,255,255,.04);
-border-radius:15px;
-}
-
-.progress{
-height:8px;
-background:#111827;
-border-radius:999px;
-margin-top:10px;
-overflow:hidden;
-}
-
-.progress span{
-display:block;
-height:100%;
-background:linear-gradient(90deg,#00ff88,#00bfff);
-}
-
-.timeline{
-border-left:2px solid #00ff88;
-padding-left:20px;
-}
-
-.timeline-item{
-margin-bottom:30px;
-}
-
-.contact-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,textarea{
-padding:15px;
-border:none;
-border-radius:10px;
-background:#111827;
-color:white;
-}
-
-footer{
-text-align:center;
-padding:30px;
-color:#94a3b8;
-}
-
-@media(max-width:768px){
-.navbar{
-flex-direction:column;
-gap:15px;
-}
-}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<canvas id="bg"></canvas>
-
 <header>
-<nav class="navbar">
-<div class="logo">VAIRON_CYBERT</div>
-<ul class="nav-links">
-<li><a href="#home">Accueil</a></li>
-<li><a href="#about">À propos</a></li>
-<li><a href="#projects">Projets</a></li>
-<li><a href="#skills">Compétences</a></li>
-<li><a href="#timeline">Parcours</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+  <nav class="navbar">
+    <h1 class="logo">VAIRON.</h1>
+
+    <ul class="nav-links">
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section id="home" class="hero">
-<div class="hero-content">
-<h1>concepteur developpeur informatique</h1>
-<div class="typing" id="typing"></div>
-<a href="#projects" class="btn">Explorer mes projets</a>
-</div>
+
+  <div class="hero-text">
+    <p class="hero-tag">Développeur Concepteur Informatique</p>
+
+    <h2>
+      Je conçois des expériences numériques modernes.
+    </h2>
+
+    <p class="hero-description">
+      Passionné par le développement web, Python et la conception logicielle.
+      J’aime transformer des idées en projets concrets.
+    </p>
+
+    <a href="#projects" class="btn">Voir mes projets</a>
+  </div>
+
+  <div class="hero-image">
+    <img src="img/profil.jpg" alt="Photo de profil">
+  </div>
+
 </section>
 
-<section id="about">
-<h2>À propos</h2>
-<div class="card">
-<p>
-Passionné par le développement, l'electronique  et ce qui touche a l'informatique.
-J’aime concevoir des solutions modernes, innoventes et performantes.
-</p>
-</div>
+<section id="about" class="about">
+
+  <div class="about-image">
+    <img src="img/about.jpg" alt="À propos">
+  </div>
+
+  <div class="about-text">
+    <h2>À propos de moi</h2>
+
+    <p>
+      Je suis passionné par l’informatique et la création de solutions numériques.
+      Mon objectif est de devenir développeur concepteur informatique et de construire
+      des applications modernes, utiles et performantes.
+    </p>
+  </div>
+
 </section>
 
 <section id="projects">
-<h2>Projets</h2>
-<div class="card-grid">
-<div class="card">
-<h3>🐍 Python Automation</h3>
-<p>Scripts d’automatisation et outils utiles.</p>
-</div>
-<div class="card">
-<h3>🌐 Web Projects</h3>
-<p>Sites modernes et interfaces dynamiques.</p>
-</div>
-<div class="card">
-<h3>🎮 Mini Games</h3>
-<p>Expérimentations interactives.</p>
-</div>
-</div>
-</section>
 
-<section id="skills">
-<h2>Compétences</h2>
-<div class="skills">
-<div class="skill">HTML/CSS<div class="progress"><span style="width:90%"></span></div></div>
-<div class="skill">JavaScript<div class="progress"><span style="width:75%"></span></div></div>
-<div class="skill">Python<div class="progress"><span style="width:85%"></span></div></div>
-<div class="skill">Cybersécurité<div class="progress"><span style="width:70%"></span></div></div>
-</div>
-</section>
+  <h2>Mes projets</h2>
 
-<section id="timeline">
-<h2>Parcours</h2>
-<div class="timeline">
-<div class="timeline-item">
-<h3>2024</h3>
-<p>Début du développement web</p>
-</div>
-<div class="timeline-item">
-<h3>2025</h3>
-<p>Projets Python & électronique</p>
-</div>
-<div class="timeline-item">
-<h3>2026</h3>
-<p>renforcement des bases en IA</p>
-</div>
-</div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="img/project-game.png" alt="Projet">
+      <h3>Projet graphique</h3>
+      <p>Création d’univers visuels et conception créative.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Application Python</h3>
+      <p>Développement d’outils simples pour automatisation.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Développement Web</h3>
+      <p>Création de sites web modernes et responsive.</p>
+    </div>
+
+  </div>
+
 </section>
 
 <section id="contact">
-<h2>Contact</h2>
-<form class="contact-form">
-<input type="text" placeholder="Nom">
-<input type="email" placeholder="Email">
-<textarea rows="5" placeholder="Message"></textarea>
-<button class="btn">Envoyer</button>
-</form>
+
+  <h2>Contact</h2>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Nom">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button type="submit" class="btn">Envoyer</button>
+  </form>
+
 </section>
 
 <footer>
-© 2026 VAIRON Cybert
+  <p>© 2026 VAIRON Cybert</p>
 </footer>
 
-<script>
-const text = [
-"Développeur Front-End",
-"Passionné Cybersecurity",
-"Python Developer"
-];
-let count = 0;
-let index = 0;
-let currentText = '';
-let letter = '';
-
-(function type(){
-if(count === text.length){count = 0;}
-currentText = text[count];
-letter = currentText.slice(0, ++index);
-document.getElementById('typing').textContent = letter;
-if(letter.length === currentText.length){
-count++;
-index = 0;
-setTimeout(type, 1000);
-}else{
-setTimeout(type, 100);
-}
-})();
-
-const canvas = document.getElementById('bg');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const particles = [];
-for(let i=0;i<80;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*2
-});
-}
-
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-particles.forEach(p=>{
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fillStyle='rgba(0,255,136,.6)';
-ctx.fill();
-p.y += 0.3;
-if(p.y > canvas.height) p.y = 0;
-});
-requestAnimationFrame(animate);
-}
-animate();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
