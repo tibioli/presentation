@@ -3,63 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Béni ESSODINA | Portfolio</title>
+    <title>Béni ESSODINA | Portfolio Tech</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">Béni.Dev</div>
+            <div class="logo">Béni<span>.Dev</span></div>
             <ul>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#labo">Atelier</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="hero">
-            <img src="img/hero2.jpeg" alt="Béni ESSODINA" class="profile-pic">
+            <div class="profile-container">
+                <img src="img/hero2.jpeg" alt="Béni ESSODINA" class="profile-pic">
+            </div>
             <h1>Béni ESSODINA</h1>
-            <p>Étudiant en Terminale D & Passionné de Technologie</p>
+            <p class="subtitle">Futur Ingénieur en Informatique | Passionné d'Électronique</p>
         </div>
     </header>
 
     <section id="projets">
-        <h2>Mes Projets Tech</h2>
+        <h2>Mes Projets Phares</h2>
         <div class="projects-grid">
             
             <div class="project-card">
-                <img src="img/rob1.jpg" alt="Robot Mobile">
-                <h3>Robotique Mobile</h3>
-                <p>Conception d'un châssis bois motorisé piloté par Arduino.</p>
+                <div class="img-container">
+                    <img src="img/rob1.jpg" alt="Robot Mobile">
+                </div>
+                <div class="card-content">
+                    <h3>Robotique Mobile</h3>
+                    <p>Système autonome sur châssis bois piloté par microcontrôleur.</p>
+                </div>
             </div>
 
             <div class="project-card">
-                <img src="img/p3.jpg" alt="Arduino Bluetooth">
-                <h3>Système Bluetooth</h3>
-                <p>Communication sans fil entre un smartphone et une carte Uno R3.</p>
+                <div class="img-container">
+                    <img src="img/p3.jpg" alt="Arduino Bluetooth">
+                </div>
+                <div class="card-content">
+                    <h3>IoT & Bluetooth</h3>
+                    <p>Contrôle à distance de composants via module Bluetooth HC-05.</p>
+                </div>
             </div>
 
             <div class="project-card">
-                <img src="img/game.jpg" alt="Illustration Game">
-                <h3>Concept Art & Design</h3>
-                <p>Exploration visuelle et design narratif.</p>
+                <div class="img-container">
+                    <img src="img/game.jpg" alt="Illustration Game">
+                </div>
+                <div class="card-content">
+                    <h3>Design & Création</h3>
+                    <p>Modélisation et univers visuel pour projets numériques.</p>
+                </div>
             </div>
 
         </div>
     </section>
 
     <section id="labo">
-        <h2>Dans l'Atelier</h2>
+        <h2>L'Atelier en Action</h2>
         <div class="gallery">
-            <img src="img/hero4.jpg" alt="Session de travail">
-            <img src="img/hero3.jpeg" alt="Établi électronique">
-            <img src="img/p1.jpg" alt="Test de circuits">
+            <img src="img/hero4.jpg" alt="Travail d'équipe" class="gallery-img">
+            <img src="img/hero3.jpeg" alt="Électronique" class="gallery-img">
+            <img src="img/p1.jpg" alt="Montage" class="gallery-img">
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Béni ESSODINA - Fait avec passion à Lomé</p>
+        <p>© 2026 Béni ESSODINA — Lomé, Togo</p>
     </footer>
 
 </body>
