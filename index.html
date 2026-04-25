@@ -1,115 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VAIRON Cybert | Développeur Concepteur</title>
-
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Béni ESSODINA | Développeur Concepteur</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
+  <div class="us-background" data-us-project="6R4d1LjjGEmpcEEmcX6A"></div>
 
-<header>
-  <nav class="navbar">
-    <h1 class="logo">VAIRON.</h1>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Béni.<span>Dev</span></h1>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <ul class="nav-links">
-      <li><a href="#home">Accueil</a></li>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#projects">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <section id="accueil" class="hero reveal">
+    <div class="slider-bg">
+      <img src="img/hero1.jpeg" alt="">
+      <img src="img/hero3.jpeg" alt="">
+      <img src="img/hero2.jpeg" alt="">
+      <img src="img/hero4.jpg" alt=""> 
+      <img src="img/hero1.jpeg" alt="">
+      <img src="img/hero3.jpeg" alt="">
+      <img src="img/hero2.jpeg" alt="">
+      <img src="img/hero4.jpg" alt="">
+    </div>
+    <div class="hero-content">
+      <h2>Béni ESSODINA</h2>
+      <h3>Futur Développeur Concepteur Informatique</h3>
+      <p>Transformer des idées complexes en expériences digitales modernes.</p>
+      <a href="#projets" class="btn">Explorer mes projets</a>
+    </div>
+  </section>
+
+  <section id="apropos" class="section reveal">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>À propos de moi</h2>
+        <p>
+          Actuellement en classe de Terminale D à Lomé, j'ai choisi l'informatique car c'est un domaine qui me passionne profondément. J'aime comprendre les rouages des technologies et concevoir des solutions concrètes, de la modélisation 3D au montage de composants électroniques.
+        </p>
+        <p>
+          Ce qui m'attire le plus, c'est l'évolution constante de ce secteur. Mon objectif est de devenir développeur concepteur informatique, pour contribuer à des projets innovants et utiles, tout en continuant à expérimenter avec la programmation et la cybersécurité.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="img/profil.jpg" alt="Photo de Béni Essodina">
+      </div>
+    </div>
+  </section>
+
+  <section id="projets" class="section reveal">
+    <h2>Mes projets</h2>
+    <div class="projects">
+      
+      <div class="project-card">
+        <h3>🐍 Application Python</h3>
+        <p>Développement d’une application simple en Python, pour consolider la logique et les bases de la programmation.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>🔧 Projet électronique</h3>
+        <p>Conception d’un montage électronique avec microcontrôleur et composants de base.</p>
+        <button class="btn-show" onclick="toggleProject(this, 'project1')">Voir plus</button>
+        <div id="project1" class="project-details">
+          <img src="img/p1.jpg" alt="Montage 1">
+          <img src="img/p2.jpg" alt="Montage 2">
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>🧱 Modélisation 3D</h3>
+        <p>Réalisation de modèles 3D simples pour expérimenter la conception numérique et la vision spatiale.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>🎮 Mini-jeu Scratch</h3>
+        <p>Création d’un petit jeu interactif pour aborder les concepts d'algorithmique de manière ludique.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="section contact reveal">
+    <h2>Discutons de vos idées</h2>
+    <p>Prêt à relever de nouveaux défis numériques.</p>
+    <ul>
+      <li>Email : <a href="mailto:tibiolidragon8@gmail.com">tibiolidragon8@gmail.com</a></li>
+      <li>GitHub : <a href="https://github.com/tibioli" target="_blank">github.com/tibioli</a></li>
     </ul>
-  </nav>
-</header>
+  </section>
 
-<section id="home" class="hero">
+  <footer>
+    <p>© 2026 Béni ESSODINA — Portfolio personnel</p>
+  </footer>
 
-  <div class="hero-text">
-    <p class="hero-tag">Développeur Concepteur Informatique</p>
-
-    <h2>
-      Je conçois des expériences numériques modernes.
-    </h2>
-
-    <p class="hero-description">
-      Passionné par le développement web, Python et la conception logicielle.
-      J’aime transformer des idées en projets concrets.
-    </p>
-
-    <a href="#projects" class="btn">Voir mes projets</a>
-  </div>
-
-  <div class="hero-image">
-    <img src="img/profil.jpg" alt="Photo de profil">
-  </div>
-
-</section>
-
-<section id="about" class="about">
-
-  <div class="about-image">
-    <img src="img/about.jpg" alt="À propos">
-  </div>
-
-  <div class="about-text">
-    <h2>À propos de moi</h2>
-
-    <p>
-      Je suis passionné par l’informatique et la création de solutions numériques.
-      Mon objectif est de devenir développeur concepteur informatique et de construire
-      des applications modernes, utiles et performantes.
-    </p>
-  </div>
-
-</section>
-
-<section id="projects">
-
-  <h2>Mes projets</h2>
-
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <img src="img/project-game.png" alt="Projet">
-      <h3>Projet graphique</h3>
-      <p>Création d’univers visuels et conception créative.</p>
-    </div>
-
-    <div class="project-card">
-      <h3>Application Python</h3>
-      <p>Développement d’outils simples pour automatisation.</p>
-    </div>
-
-    <div class="project-card">
-      <h3>Développement Web</h3>
-      <p>Création de sites web modernes et responsive.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section id="contact">
-
-  <h2>Contact</h2>
-
-  <form class="contact-form">
-    <input type="text" placeholder="Nom">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Message"></textarea>
-    <button type="submit" class="btn">Envoyer</button>
-  </form>
-
-</section>
-
-<footer>
-  <p>© 2026 VAIRON Cybert</p>
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.9/dist/unicornStudio.umd.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
