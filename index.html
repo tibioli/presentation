@@ -27,7 +27,26 @@
             </div>
         </div>
     </nav>
+<div id="unicorn-canvas" 
+     style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;" 
+     data-us-project="JmBhUTPfPePeP9zEi2NF">
+</div>
 
+<style>
+    /* Masquer le filigrane (Watermark) */
+    [class*="unicorn-studio-watermark"], 
+    a[href*="unicornstudio.io"] {
+        display: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Optionnel : Assure-toi que le reste de ton contenu est bien lisible */
+    #unicorn-canvas canvas {
+        opacity: 0.6; /* Ajuste l'opacité selon tes préférences */
+    }
+</style>
+    
     <header class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px]"></div>
         <div class="text-center z-10">
@@ -186,6 +205,27 @@
     <footer class="py-12 border-t border-white/5 text-center text-slate-500 text-sm">
         <p>&copy; 2026 Béni ESSODINA. Built for the future.</p>
     </footer>
-
+    
+<script type="text/javascript">
+    !function(){
+        var u=window.UnicornStudio;
+        if(u&&u.init){
+            if(document.readyState==="loading"){
+                document.addEventListener("DOMContentLoaded",function(){u.init()})
+            }else{u.init()}
+        }else{
+            window.UnicornStudio={isInitialized:!1};
+            var i=document.createElement("script");
+            i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.9/dist/unicornStudio.umd.js";
+            i.onload=function(){
+                if(document.readyState==="loading"){
+                    document.addEventListener("DOMContentLoaded",function(){UnicornStudio.init()})
+                }else{UnicornStudio.init()}
+            };
+            (document.head||document.body).appendChild(i)
+        }
+    }();
+</script>
+    
 </body>
 </html>
